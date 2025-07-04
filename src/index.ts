@@ -9,15 +9,11 @@ dotenv.config();
 
 const app = express();
 
-app.use(
-  cors({
-    origin: 'http://localhost:3000',
-  })
-);
-
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: '*' }));
 app.use('/', imageRoutes);
 
 AppDataSource.initialize().then(() => {
-  app.listen(4000, () => console.log('Servidor rodando na porta 4000'));
+  app.listen(4000, '0.0.0.0', () =>
+    console.log('Servidor rodando na porta 4000')
+  );
 });
