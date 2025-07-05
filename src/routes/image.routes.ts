@@ -9,3 +9,5 @@ const upload = multer();
 router.get('/panel', ImageController.getPanelData);
 router.post('/upload', upload.single('image'), ImageController.uploadImage);
 router.get('/image/:id', ImageController.getImageById);
+
+export default router;
