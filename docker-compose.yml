@@ -11,7 +11,6 @@ services:
       POSTGRES_DB: photo_capture
     volumes:
       - pgdata:/var/lib/postgresql/data
-
   api:
     build: .
     ports:
