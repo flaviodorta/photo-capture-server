@@ -12,7 +12,7 @@ export const getPanelData = async () => {
     })),
     images: images.map((img) => ({
       id: img.id,
-      url: `${process.env.HOST_IP}/image/${img.id}`,
+      url: `${process.env.SERVER_URL}/image/${img.id}`,
       createdAt: img.createdAt.toISOString(),
     })),
   };
@@ -29,7 +29,7 @@ export const saveImage = async (file: Express.Multer.File) => {
 
   return {
     id: saved.id,
-    url: `${process.env.HOST_IP}/image/${saved.id}`,
+    url: `${process.env.SERVER_URL}/image/${saved.id}`,
   };
 };
 
